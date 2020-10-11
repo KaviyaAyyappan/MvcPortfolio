@@ -1,0 +1,75 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/fontawesome.min.css" rel="stylesheet" />
+    <link href="~/Content/fontawesome-all.css" rel="stylesheet" />
+
+</head>
+<body style="background-image:url('/Images/background.jpg')">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+        <div class="container">
+            @Html.ActionLink("My Portfolio", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse collapse justify-content-end">
+                <ul class="nav navbar-nav mr-auto">
+                    @*<li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>*@
+                    <li class="nav-item">@Html.ActionLink("About Me", "About", "Home", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "nav-link" })</li>
+                   @* <li class="nav-item">@Html.ActionLink("Project", "Project", "Home", null, new { @class = "nav-link" })</li>*@
+
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </nav>
+
+    <div class=" container card-body">
+        <div class="row">
+            <div class="col col-md-3" style="background-color:#33cccc">
+                <div style="padding-right:20px;padding-top:50px;padding-left:40px;position:center;padding-bottom:30px">
+                    <img style="height:12rem;width:10rem" src="~/Images/Photo.jpg" />
+                </div>
+
+                <h2 style="padding-bottom:40px;color:white">Kaviya Ayyappan</h2>
+                <ul style="font-size:larger;list-style-type:none;">
+                    <li>@Html.ActionLink("About Me", "About", "Home", new { @style = "color:white;" })<hr /></li>
+                    <li>@Html.ActionLink("Experience", "Experience", "Home", new { @style = "color:white;" })<hr /></li>
+                    <li>@Html.ActionLink("Education", "Educations", "Home", new { @style = "color:white;" })<hr /></li>
+                    <li>@Html.ActionLink("Technical Skills", "TechnicalSkills", "Home", new { @style = "color:white;" })<hr /></li>
+                    <li>@Html.ActionLink("Personal Skills", "PersonalSkills", "Home", new { @style = "color:white;" })<hr /></li>
+                    @*<li>@Html.ActionLink("Certificate", "Certificate", "Home", new { @style = "color:white;" })<hr /></li>*@
+                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { @style = "color:white;" })<hr /></li>
+
+
+                </ul>
+            </div>
+            <div class="col col-md-8">
+                <div class="card">
+                    <div class="card-body font-weight-light" style="font-family:Calibri;font-size:larger;text-align: justify;height:800px">
+                        <blockquote class="blockquote mb-0">
+
+                            @RenderBody()
+
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
